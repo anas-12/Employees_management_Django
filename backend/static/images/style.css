@@ -1,0 +1,7 @@
+body {
+    background: white url("anas.png") no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 100% ;
+    color: aliceblue;
+}

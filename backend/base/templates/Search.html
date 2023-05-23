@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1 style="color: rgb(255, 255, 255);" >Résultats de la recherche</h1>
+    {% if employee %}
+      <p style="color: rgb(255, 255, 255);" >Employé trouvé :</p>
+      <div class="list-group">
+        <div class="list-group-item">
+          <div class="row">
+            <div class="col">Nom:</div>
+            <div class="col">{{ employee.name }}</div>
+          </div>
+        </div>
+        <div class="list-group-item">
+          <div class="row">
+            <div class="col">Poste:</div>
+            <div class="col">{{ employee.poste }}</div>
+          </div>
+        </div>
+        <div class="list-group-item">
+          <div class="row">
+            <div class="col">Département:</div>
+            <div class="col">{{ employee.department }}</div>
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <p style="color: rgb(255, 255, 255);">Aucun employé n'a été trouvé pour cet ID {{ idEMP }}.</p>
+    {% endif %}
+  </div>
+{% endblock %}

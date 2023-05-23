@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load custom_tag %}
+{% block title %}
+    Le catalogue des Employés
+{% endblock title %}
+{% load static %}
+
+
+
+
+{% block content %}
+
+<style>
+    table {
+      background-color: white;
+    }
+
+    .header-row {
+      background-color: black;
+      color: white;
+    }
+  </style>
+
+    <div class="container mt-4"><link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}">
+
+        <h1 style="color: rgb(255, 255, 255);" >Nos Employés</h1>
+        <table class="table table-hover">
+            <thead>
+                <tr class="header-row">
+                    <th>Identifiant</th>
+                    <th>Nom</th>
+                    <th>adresse</th>
+                    <th>Département</th>
+                    <th>Poste</th>
+                    <th>Salaire</th>
+                    <th>nombre d'absence</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                
+                {% for emp in emps %}
+                    <tr>
+                        <td>{{ emp.id }}</td>
+                        <td>{{ emp.name }}</td>
+                        <td>{{ emp.adresse }}</td>
+                        <td>{{ emp.department }}</td>
+                        <td>{{ emp.poste }}</td>
+                        <td>{{ emp.salary }}</td>
+                        <td>{{ emp.nbrAbsences }}</td>
+                        
+                        <td><a href="{% url 'emp_details' emp.id %}"><i class="far fa-eye" style="color:#000000;"></i></a></td>
+                        <td><a href="{% url 'emp_edit' emp.id %}"><i class="fas fa-user-edit" style="color:#000000;"></i></a></td>
+                        <td><a href="{% url 'emp_delete' emp.id %}"><i class="fa fa-trash" style="color: #000000;" aria-hidden="true "></i></a></td>
+                    </tr>
+                    
+                {% endfor %}
+                    
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center">
+            <a href="{% url 'emp_new' %}" class=" btn btn-light" >NEW EMP</a>
+        </div>
+
+
+    </div>
+{% endblock content %}
+

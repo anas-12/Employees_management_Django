@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Détail d'un Employé
+{% endblock  %}
+
+
+{% block content %}
+   
+            <div class="col-4">
+                <div class="list-group">
+                    <div class="list-group-item">{{emp.name}}</div>
+                    <div class="list-group-item">{{emp.description}}</div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <div class="row">
+                            <div class="col">id:</div>
+                            <div class="col">{{emp.id}}</div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="row">
+                            <div class="col">Poste:</div>
+                            <div class="col">{{emp.poste}}</div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="d-flex justify-content-center">
+                            <a href="{% url 'list_emp' %}" class="btn btn-dark">Retour</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock  %}
+    
+    

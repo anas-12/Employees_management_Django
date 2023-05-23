@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Bienvenue dans HumanizePro
+{% endblock title %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="container mt-4 bg-dark rounded text-center text-white">
+      <h1 class="text-white">Bienvenue sur HumanizePro</h1>
+      <p>Bienvenue dans l'interface de gestion des employés !
+          Ici, vous pourrez gérer toutes les informations relatives à vos employés, telles que leur profil, leur statut d'emploi, leurs horaires, leurs congés, leurs performances et bien plus encore.
+          Notre plateforme est conçue pour vous offrir une expérience de gestion simple et intuitive, vous permettant de rester organisé et de prendre des décisions éclairées pour votre entreprise.
+          N'hésitez pas à explorer toutes les fonctionnalités à votre disposition et à nous contacter si vous avez des questions ou des commentaires.</p>
+      <hr>
+      <p>Vous voulez découvrir nos employés</p>
+      <p class="py-3">
+          <a href="{% url 'list_emp' %}" class="btn btn-light">Voir nos employés</a>
+      </p>
+    </div>
+  </div>
+{% endblock content %}
